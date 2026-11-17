@@ -1,0 +1,1 @@
+SELECT id, nome, media * 1.5 AS valutazione_fanta FROM giocatori;
