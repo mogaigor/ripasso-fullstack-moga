@@ -1,0 +1,13 @@
+@if (loading()) {
+  <p>Caricamento…</p>
+} @else if (errore()) {
+  <p>{{ errore() }}</p>
+} @else {
+  @for (g of giocatori(); track g.id) {
+    <div class="card">
+      <h3>{{ g.nome }}</h3>
+      <p>{{ g.valutazione_fanta }}</p>
+      <a [routerLink]="['/giocatore', g.id]">Vedi dettaglio</a>
+    </div>
+  } @empty { <p>Nessun giocatore</p> }
+}
